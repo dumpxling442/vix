@@ -1,0 +1,113 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #1f1135 0%, #3b1d59 50%, #5c287b 100%);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow: hidden;
+    position: relative;
+}
+
+.flower {
+    position: absolute;
+    bottom: -50px;
+    font-size: 24px;
+    animation: floatUp linear infinite;
+    opacity: 0.7;
+    z-index: 1;
+    filter: drop-shadow(0 0 8px rgba(206, 147, 216, 0.6));
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+    20% {
+        opacity: 0.8;
+    }
+    80% {
+        opacity: 0.8;
+    }
+    100% {
+        transform: translateY(-105vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+.card {
+    position: relative;
+    z-index: 2;
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(15px);
+    padding: 40px 30px;
+    border-radius: 25px;
+    box-shadow: 0 20px 45px rgba(92, 40, 123, 0.4);
+    text-align: center;
+    max-width: 380px;
+    width: 90%;
+    animation: fadeIn 1.2s ease-in-out;
+    border: 2px solid rgba(238, 187, 255, 0.7);
+}
+
+.sun-icon {
+    font-size: 50px;
+    margin-bottom: 15px;
+    animation: bounce 2s infinite;
+}
+
+h1 {
+    color: #5c287b;
+    font-size: 26px;
+    margin-bottom: 15px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+p {
+    color: #4a3b5c;
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+.alarm-box {
+    background: #f4e8ff;
+    border: 1px dashed #ce93d8;
+    padding: 12px;
+    border-radius: 12px;
+    color: #7b1fa2;
+    font-size: 14px;
+    font-weight: 600;
+    box-shadow: 0 4px 15px rgba(123, 31, 162, 0.08);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+}
